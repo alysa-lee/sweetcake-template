@@ -1,0 +1,47 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-default">
+
+ <header class="bk-header">
+    <div class="wrapper clearfix">
+        <div class="companyheader clearfix">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+        </div>
+        {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+    </div>
+</header>
+
+<section>
+{{widget('image', 'image1', { 'src': asset('images/feature-inner.jpg'),'alt': 'my image', 'fileName': 'feature-inner.jpg', 'fileSize': '255kb', 'imageSize': '1500 x 300', 'imageWidth': '1500px'})|raw}}
+</section>
+
+<div class="main wrapper clearfix">
+    <div class="responsivecolumns columns-two-50-50">
+            <div class="column columns-two-left">
+                {{widget('content', 'column1title', {"content":'<h3>Contact</h3>'})|raw}}
+				{{widget('content', 'column1content', {"content":'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'})|raw}}
+            </div>
+            <div class="column columns-two-right">
+            	{{widget('contactform', 'form1', {'text': 'Submit','formTitle': 'Contact Form', 'email': 'profile'})|raw}}
+            </div>
+        </div>
+</div>
+<section>
+{{widget('map', 'mapcontact', {'height': '450', 'zoom': '15', 'address': 'profile'})|raw}}
+</section>
+  
+
+<footer class="bk-footer">
+    <div class="wrapper clearfix">
+        {{widget('socialicons', 'footersocialicons', {'googleplus': 'profile', 'linkedin':'profile', 'facebook': 'profile', 'twitter': 'profile', 'youtube': 'profile', 'rss': 'profile', 'align': 'widget-align-center'})|raw}}              
+        {{widget('profile', 'footercolumn1profileEmail', { 'profileType':'email', 'email':'profile'})|raw}}
+        {{widget('profile', 'footercolumn1profilePhone', { 'profileType':'phone', 'phone':'profile'})|raw}} 
+    </div>
+</footer>
+
+</div>
+
+{% endblock %}

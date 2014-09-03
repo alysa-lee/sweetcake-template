@@ -1,0 +1,35 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bk-pt-default">
+
+ <header class="bk-header">
+    <div class="wrapper clearfix">
+        <div class="companyheader clearfix">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+        </div>
+        {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+    </div>
+</header>
+
+<section>
+{{widget('image', 'image1', { 'src': asset('images/feature-inner.jpg'),'alt': 'my image', 'fileName': 'feature-inner.jpg', 'fileSize': '255kb', 'imageSize': '1500 x 300', 'imageWidth': '1500px'})|raw}}
+</section>
+
+<div class="main wrapper clearfix">
+    {{zone('main')|raw}}
+</div>  
+
+<footer class="bk-footer">
+    <div class="wrapper clearfix">
+        {{widget('socialicons', 'thisunqiuewidgetname', {'googleplus': 'profile', 'linkedin':'profile', 'facebook': 'profile', 'twitter': 'profile', 'youtube': 'profile', 'rss': 'profile', 'align': 'widget-align-center'})|raw}}              
+        {{widget('profile', 'footercolumn1profileEmail', { 'profileType':'email', 'email':'profile'})|raw}}
+        {{widget('profile', 'footercolumn1profilePhone', { 'profileType':'phone', 'phone':'profile'})|raw}} 
+    </div>
+</footer>
+
+</div>
+
+{% endblock %}

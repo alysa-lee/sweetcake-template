@@ -1,0 +1,57 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+
+<header class="bk-header">
+    <div class="wrapper clearfix">
+        <div class="companyheader clearfix">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+        </div>
+        {{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+    </div>
+</header>
+
+<section>
+ {{widget('feature', 'featurehome', {"header": "profile", "align":"left", "strapline":"profile", "buttonText":"More Info","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '0','showBtn': true})|raw}}
+</section>
+
+<div class="main wrapper clearfix">
+<div class="responsivecolumns columns-three-33-34-33">
+            <div class="column columns-three-left">
+                {{widget('content', 'column1title', {"content":'<h3>Celebration Cakes</h3>'})|raw}}
+				{{widget('image', 'column1image', { 'src': asset('/images/cake-01-280x180.jpg'), 'alt': 'my image', 'fileName': 'cake-01-280x180.jpg', 'imageSize': '280 x 180', 'imageWidth': '280px'})|raw}}
+				{{widget('content', 'column1content', {"content":'<p>These cakes are perfect for celebration and parties. Sed diam non ummy nibh in euismod tincidunt ut liber tempor laoreet.</p>'})|raw}}
+            </div>
+            <div class="column columns-three-middle">
+            	{{widget('content', 'column2title', {"content":'<h3>Fruit Desserts</h3>'})|raw}}
+            	{{widget('image', 'column2image', { 'src': asset('/images/cake-02-280x180.jpg'), 'alt': 'my image', 'fileName': 'cake-01-280x180.jpg', 'imageSize': '280 x 180', 'imageWidth': '280px'})|raw}}
+            	{{widget('content', 'column2content', {"content":'<p>Browse our Fruit Desserts. Euismod tincidunt ut liber tempor. Sed diam non ummy nibh in euismod tincidunt ut liber tempor .</p>'})|raw}}
+            </div>
+            <div class="column columns-three-right">
+                {{widget('content', 'column3title', {"content":'<h3>Little Cupcakes</h3>'})|raw}}
+                {{widget('image', 'column3image', { 'src': asset('/images/cake-03-280x180.jpg'), 'alt': 'my image', 'fileName': 'cake-01-280x180.jpg', 'imageSize': '280 x 180', 'imageWidth': '280px'})|raw}}
+                {{widget('content', 'column3content', {"content":'<p>Little cupcakes for some special occasions. Euismod tincidunt ut liber. Sed diam non ummy nibh in euismod tincidunt ut liber.</p>'})|raw}}
+            </div>
+        </div>
+</div>
+
+<div class="main wrapper clearfix">
+{{widget('line', 'thisunqiuewidgetname', {'thickness': '1', 'padding': 'inherit', 'length':'inherit', 'align': 'center'})|raw}}
+</div>
+
+<div class="main wrapper clearfix">
+ {{zone('main')|raw}}
+</div>  
+
+<footer class="bk-footer">
+    <div class="wrapper clearfix">
+        {{widget('socialicons', 'thisunqiuewidgetname', {'googleplus': 'profile', 'linkedin':'profile', 'facebook': 'profile', 'twitter': 'profile', 'youtube': 'profile', 'rss': 'profile', 'align': 'widget-align-center'})|raw}}
+    	{{widget('profile', 'footercolumn1profileEmail', { 'profileType':'email', 'email':'profile'})|raw}}
+		{{widget('profile', 'footercolumn1profilePhone', { 'profileType':'phone', 'phone':'profile'})|raw}} 
+</div>
+</footer>
+
+
+{% endblock %}
